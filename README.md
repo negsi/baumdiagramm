@@ -35,6 +35,12 @@ venv\Scripts\activate      # Windows
 pip install -r requirements.txt
 ```
 
+### 4. Create .env
+
+```bash
+cp .env.template .env
+```
+
 ---
 
 ## Usage
