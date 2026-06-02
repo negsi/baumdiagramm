@@ -45,9 +45,9 @@ python cli.py [COMMAND] [ARGS]
 
 ---
 
-## 1. Node Management
+### 1. Node Management
 
-### `tree-add-node`
+#### `tree-add-node`
 Creates a new node.
 *   **Args:** `value` (string), `parent_id` (optional).
 *   **Example:**
@@ -56,7 +56,7 @@ Creates a new node.
     python cli.py tree-add-node "Child Node" 1
     ```
 
-### `tree-move-node`
+#### `tree-move-node`
 Moves a node (and its entire subtree) to a new parent.
 *   **Args:** `node_id`, `new_parent_id` (optional).
 *   **Example:**
@@ -67,7 +67,7 @@ Moves a node (and its entire subtree) to a new parent.
     python cli.py tree-move-node 5
     ```
 
-### `tree-delete-node`
+#### `tree-delete-node`
 Removes a node from the tree. *Note: Descendants are not automatically deleted or re-parented.*
 *   **Args:** `node_id`.
 *   **Example:**
@@ -77,16 +77,16 @@ Removes a node from the tree. *Note: Descendants are not automatically deleted o
 
 ---
 
-## 2. Listing & Querying
+### 2. Listing & Querying
 
-### `tree-list-roots`
+#### `tree-list-roots`
 Lists all top-level nodes (nodes with no parent).
 *   **Example:**
     ```bash
     python cli.py tree-list-roots
     ```
 
-### `tree-list-subtree` | `tree-list-ancestors` | `tree-list-descendants`
+#### `tree-list-subtree` | `tree-list-ancestors` | `tree-list-descendants`
 Retrieve specific subsets of the tree.
 *   **Args:** `node_id`.
 *   **Example:**
@@ -95,7 +95,7 @@ Retrieve specific subsets of the tree.
     python cli.py tree-list-ancestors 5
     ```
 
-### `tree-find`
+#### `tree-find`
 Search for nodes by value (case-insensitive).
 *   **Args:** `query`.
 *   **Example:**
@@ -103,40 +103,40 @@ Search for nodes by value (case-insensitive).
     python cli.py tree-find "Search Term"
     ```
 
-### `tree-info`
+#### `tree-info`
 Display metadata for a specific node.
 *   **Args:** `node_id`.
 
 ---
 
-## 3. Visualization & Export
+### 3. Visualization & Export
 
-### `tree-print`
+#### `tree-print`
 Prints a visual ASCII representation of the tree in the terminal.
 *   **Args:** `root_id`.
 
-### `tree-export-json` / `tree-import-json`
+#### `tree-export-json` / `tree-import-json`
 Export/Import the tree structure as JSON.
 *   **Export:** `python cli.py tree-export-json 1 > tree.json`
 *   **Import:** `python cli.py tree-import-json data.json --parent 1`
 
-### `tree-export-dot`
+#### `tree-export-dot`
 Export the tree in Graphviz DOT format for visualization tools.
 *   **Args:** `root_id`.
 
 ---
 
-## 4. Analysis & Generation
+### 4. Analysis & Generation
 
-### `tree-stats`
+#### `tree-stats`
 Display structural statistics (count, depth, leaf nodes, branching factor).
 *   **Args:** `root_id`.
 
-### `tree-validate`
+#### `tree-validate`
 Checks the integrity of the database closure table (detects cycles, zombie paths, or missing links).
 *   **Usage:** `python cli.py tree-validate`
 
-### Random Data Generation
+#### Random Data Generation
 Useful for testing and performance benchmarking.
 
 *   **`tree-generate-random`**: Generates a tree and imports it into the DB.
