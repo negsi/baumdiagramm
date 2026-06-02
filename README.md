@@ -43,7 +43,7 @@ cp .env.template .env
 
 ---
 
-## Usage
+## 🥳 Usage
 All commands are accessed through the main `cli.py` script.
 ```bash
 python cli.py [COMMAND] [ARGS]
